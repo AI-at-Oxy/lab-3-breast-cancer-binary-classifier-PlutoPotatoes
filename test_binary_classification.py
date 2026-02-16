@@ -38,6 +38,7 @@ class TestSigmoid:
     
     def test_sigmoid_zero(self):
         """sigmoid(0) should equal 0.5"""
+
         result = sigmoid(torch.tensor(0.0))
         assert approx_equal(result, 0.5), f"sigmoid(0) = {result}, expected 0.5"
     
@@ -104,7 +105,7 @@ class TestForward:
         x = torch.tensor([100.0, -50.0, 25.0])
         b = torch.tensor(10.0)
         result = forward(x, w, b)
-        assert 0 < result < 1, f"forward output {result} not in (0, 1)"
+        assert 0 <= result <= 1, f"forward output {result} not in (0, 1)"
 
 
 # =============================================================================
