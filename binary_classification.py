@@ -171,8 +171,8 @@ def train(X_train, y_train, alpha=0.01, n_epochs=100, verbose=True):
             dw, db = compute_gradients(x_i, y_i, y_hat)
 
             # Update parameters using gradient descent
-            w = w + alpha*dw
-            b = b + alpha*db
+            w = w - alpha*dw
+            b = b - alpha*db
         
         avg_loss = epoch_loss / len(y_train)
         losses.append(avg_loss)
